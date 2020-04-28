@@ -21,8 +21,6 @@ public class EnvirowearUtils {
     }
 
     public static Double generateRandomDouble(double min, double max) {
-
-
         return toTwoDecimalPlaces(min + (max - min) * RANDOM.nextDouble());
     }
 }

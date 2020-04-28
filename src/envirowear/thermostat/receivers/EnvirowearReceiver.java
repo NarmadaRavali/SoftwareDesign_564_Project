@@ -56,7 +56,6 @@ public class EnvirowearReceiver implements Receiver {
     public Event validateBodySensor() {
 
         final List<SensorReading> workingSensors = getWorkingSensorValues(this.bodySensorReadings);
-
         if (workingSensors.size() == 0) {
             return new Event(new Alert("Body sensors are not working", AlertType.SEVERE));
         } else if (workingSensors.size() == this.bodySensorReadings.size()) {
@@ -73,7 +72,7 @@ public class EnvirowearReceiver implements Receiver {
 
         if (workingSensors.size() == 0) {
             return new Event(new Alert("Suit sensors are not working", AlertType.SEVERE));
-        } else if (workingSensors.size() == this.bodySensorReadings.size()) {
+        } else if (workingSensors.size() == this.suitSensorReadings.size()) {
             return new Event(new Alert("", AlertType.WORKING_GREAT));
         } else {
             return new Event(new Alert("Few suit sensors are not working", AlertType.WARNING));
